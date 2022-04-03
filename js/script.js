@@ -12,12 +12,11 @@ function getWeather() {
 }
 
 function showWeather(data) {
-	
 	document.querySelector('div.name-city').innerHTML = data.name;
 	document.querySelector('p.temp').innerHTML = Math.round(data.main.temp)+'&deg';
 	document.querySelector('p.clouds').innerHTML = data.weather[0]['description'];
 	document.querySelector('p.wind').innerHTML = Math.round(data.wind.speed * 3.6) + ' ' + 'km/s';
-	
+	document.querySelector('.icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png">`;
 	document.querySelector('p.humidity').innerHTML = data.main.humidity + ' %';
 }
 
